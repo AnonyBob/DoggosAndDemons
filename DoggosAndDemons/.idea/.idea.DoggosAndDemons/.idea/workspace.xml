@@ -2,151 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ce38f3c-8832-4743-b596-4c022ce30c9a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DoggosAndDemons/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DoggosAndDemons/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DoggosAndDemons/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DoggosAndDemons/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DoggosAndDemons/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DoggosAndDemons/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DoggosAndDemons/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Input/DogInput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Input/DogInput.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DogCamera.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DogCamera.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DogPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DogPlayer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Dogs/Mallow/Mallow_32.aseprite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Dogs/Mallow/Mallow_32.aseprite.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Dogs/Mallow/Mallow_32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Dogs/Mallow/Mallow_32.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_0.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_0.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_1.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_1.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_2.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_2.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_3.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_3.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_4.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_4.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_5.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/GreyFloors/GreyFloors_5.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/WallMaterial.physicsMaterial2D" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/WallMaterial.physicsMaterial2D.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_0.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_0.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_1.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_1.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_10.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_10.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_11.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_11.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_12.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_12.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_13.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_13.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_14.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_14.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_15.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_15.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_16.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_16.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_17.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_17.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_18.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_18.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_19.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_19.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_2.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_2.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_20.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_20.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_21.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_21.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_22.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_22.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_23.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_23.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_24.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_24.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_25.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_25.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_26.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_26.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_27.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_27.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_28.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_28.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_29.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_29.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_3.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_3.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_30.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_30.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_31.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_31.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_32.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_32.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_33.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_33.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_34.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_34.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_35.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_35.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_36.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_36.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_37.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_37.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_38.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_38.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_39.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_39.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_4.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_4.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_40.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_40.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_41.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_41.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_42.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_42.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_43.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_43.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_44.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_44.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_45.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_45.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_46.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_46.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_47.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_47.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_5.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_5.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_6.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_6.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_7.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_7.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_8.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_8.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_9.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/LightBlueWalls/Walls_9.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/Rectangular Palette.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuff/Tilemaps/Rectangular Palette.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input/DoggosAndDemons.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/DoggosAndDemons.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input/DoggosAndDemons.inputactions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/DoggosAndDemons.inputactions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/Movement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/Movement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/MovementClientInput.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/MovementClientInput.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/MovementServerState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/MovementServerState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/TickManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/TickManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/MonoSingleton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DoggosAndDemons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DoggosAndDemons/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuff/Dogs/Mallow/Mallow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuff/Dogs/Mallow/Mallow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuff/Dogs/Shared/DogBase.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuff/Dogs/Shared/DogBase.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuff/Modern_Interiors/1_Interiors/32x32/Interiors_32x32.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuff/Modern_Interiors/1_Interiors/32x32/Interiors_32x32.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,6 +32,11 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/Downloads/20210423_00_Server-Authoritative-Movement/Server Authoritative Movement/Assets/FirstGearGames/Supporters/Assets/FlexNetworkTransform/Scripts/Core/AttachedTargetData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FirstGearGames/Supporters/Assets/ReactivePhysics/Scripts/ReactivePhysicsObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utility/MonoSingleton.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25RS2nc4nujgXhP8yI5abRdN6Q7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -216,6 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645488200979</updated>
       <workItem from="1645488204646" duration="9600000" />
+      <workItem from="1645991257776" duration="3515000" />
     </task>
     <servers />
   </component>
@@ -235,6 +110,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
