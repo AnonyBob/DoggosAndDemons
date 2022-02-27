@@ -13,7 +13,7 @@ namespace DefaultNamespace
                     _instance = FindObjectOfType<T>();
                     if (_instance == null)
                     {
-                        var go = new GameObject(nameof(T), typeof(T));
+                        var go = new GameObject(typeof(T).Name, typeof(T));
                         DontDestroyOnLoad(go);
 
                         _instance = go.GetComponent<T>();

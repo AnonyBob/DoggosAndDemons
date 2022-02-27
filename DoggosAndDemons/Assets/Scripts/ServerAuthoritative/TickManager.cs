@@ -9,6 +9,8 @@ namespace ServerAuthorative
         public static uint TickNumber => Instance._tickNumber;
 
         public static float TickRate => Instance._tickRate;
+
+        public static PhysicsScene2D Physics => Instance._physics;
         
         public static event Action OnPreUpdate
         {

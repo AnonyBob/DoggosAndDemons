@@ -4873,10 +4873,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4188822745666213662}
   - component: {fileID: 8971419456172199310}
+  - component: {fileID: 494299118665401912}
+  - component: {fileID: 6946685518862392343}
   - component: {fileID: 2192612788086068993}
   - component: {fileID: 4625620536643921067}
   - component: {fileID: 6644225129899598119}
-  - component: {fileID: 6946685518862392343}
   m_Layer: 0
   m_Name: DogBase_ServerAuthoritative
   m_TagString: Untagged
@@ -4916,6 +4917,35 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 81c57bf0ff7d5c54a84be0a560d6cfd6
   hasSpawned: 0
+--- !u!114 &494299118665401912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4188822745666213665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc429d34b7e4ef7991ce7abcd578382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+--- !u!114 &6946685518862392343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4188822745666213665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de8bffbf7df4214be950302b578e395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  _moveRate: 1.2
 --- !u!50 &2192612788086068993
 Rigidbody2D:
   serializedVersion: 4
@@ -4929,13 +4959,13 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!58 &4625620536643921067
 CircleCollider2D:
@@ -4983,21 +5013,6 @@ MonoBehaviour:
   _snapRotation: 0
   _synchronizeScale: 1
   _snapScale: 0
---- !u!114 &6946685518862392343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4188822745666213665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de8bffbf7df4214be950302b578e395, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  _moveRate: 0
 --- !u!1 &4188822746959590313
 GameObject:
   m_ObjectHideFlags: 0

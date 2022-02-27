@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ce38f3c-8832-4743-b596-4c022ce30c9a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/Movement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/Movement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/MovementClientInput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/MovementClientInput.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/MovementServerState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/MovementServerState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/TickManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/TickManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/MonoSingleton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DoggosAndDemons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DoggosAndDemons/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/Movements/Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/TickManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ServerAuthoritative/TickManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utility/MonoSingleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/MonoSingleton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuff/Dogs/Shared/DogBase_ServerAuthoritative.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuff/Dogs/Shared/DogBase_ServerAuthoritative.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -90,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645488200979</updated>
       <workItem from="1645488204646" duration="9600000" />
-      <workItem from="1645991257776" duration="3515000" />
+      <workItem from="1645991257776" duration="6627000" />
     </task>
     <servers />
   </component>
