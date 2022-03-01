@@ -41,11 +41,6 @@ namespace ServerAuthoritative.Movements
 
         private void TickManager_PerformUpdate()
         {
-            if (!hasAuthority && !isServer)
-            {
-                CancelVelocity(false);
-            }
-
             if (hasAuthority)
             {
                 ProcessReceivedStates(); 
@@ -126,8 +121,11 @@ namespace ServerAuthoritative.Movements
             };
             
             _clientInputs.Add(latestInput);
-            
-            ProcessInputs(latestInput);
+
+            if (!isServer)
+            {
+                ProcessInputs(latestInput);    
+            }
             CmdSendInputs(latestInput);
         }
 

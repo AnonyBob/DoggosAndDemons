@@ -50,7 +50,7 @@ namespace ServerAuthorative
             _timeBetweenTicks += Time.deltaTime;
             while (_timeBetweenTicks >= _tickRate)
             {
-                _timeBetweenTicks -= Time.deltaTime;
+                _timeBetweenTicks -= _tickRate;
                 if (_tickNumber == uint.MaxValue)
                 {
                     _tickNumber = 0;
@@ -59,7 +59,7 @@ namespace ServerAuthorative
                 
                 _onPreUpdate?.Invoke();
                 _onUpdate?.Invoke();
-
+                
                 _physics.Simulate(_tickRate);
                 _onPostUpdate?.Invoke();
             }

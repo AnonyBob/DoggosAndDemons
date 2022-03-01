@@ -4945,7 +4945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  _moveRate: 1.2
+  _moveRate: 30
 --- !u!50 &2192612788086068993
 Rigidbody2D:
   serializedVersion: 4
