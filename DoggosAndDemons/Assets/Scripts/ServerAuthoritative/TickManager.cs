@@ -29,6 +29,12 @@ namespace ServerAuthorative
             add => Instance._onPostUpdate += value;
             remove => Instance._onPostUpdate -= value;
         }
+
+        public static void UpdateTimingStep(sbyte timingStepChange)
+        {
+            Instance._tickRate = Mathf.Clamp(Instance._tickRate + (timingStepChange * TICK_STEP_CHANGE),
+                TICK_SPEED_RANGE[0], TICK_SPEED_RANGE[1]);
+        }
         
         private uint _tickNumber;
         
@@ -37,8 +43,13 @@ namespace ServerAuthorative
         private event Action _onPostUpdate;
 
         private float _timeBetweenTicks = 0;
+        
         private float _tickRate = 0.02f;
         private PhysicsScene2D _physics;
+
+        private const float TICK_STEP_CHANGE = 0.0002f; //What we change our tick rate by to increase speed of sim. 1/2% of 0.02f
+        private const float TICK_RECOVER_RATE = 0.0025f; //How quickly we try to return to default tick rate: 0.02
+        private static readonly float[] TICK_SPEED_RANGE = new float[] { 0.027f, 0.013f }; //35% up or down.
 
         protected override void Initialize()
         {
@@ -63,6 +74,8 @@ namespace ServerAuthorative
                 _physics.Simulate(_tickRate);
                 _onPostUpdate?.Invoke();
             }
+
+            _tickRate = Mathf.MoveTowards(_tickRate, Time.fixedDeltaTime, TICK_RECOVER_RATE);
         }
     }
 }

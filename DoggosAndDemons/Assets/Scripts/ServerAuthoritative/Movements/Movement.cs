@@ -15,12 +15,11 @@ namespace ServerAuthoritative.Movements
         private DoggosAndDemons _inputHandler;
 
         private readonly List<MovementClientInput> _clientInputs = new List<MovementClientInput>();
+        private readonly List<MovementClientInput> _receivedInputs = new List<MovementClientInput>();
         
-        private MovementClientInput? _receivedInput;
         private MovementServerState? _receivedState;
         
-        private const int MAX_PREDICTIONS = 20;
-        private int _remainingServerPredications = 0;
+        private const int MAX_RECEIVED_INPUTS = 10;
 
         private void Awake()
         {
@@ -62,38 +61,62 @@ namespace ServerAuthoritative.Movements
         [Command]
         private void CmdSendInputs(MovementClientInput input)
         {
-            if (input.TickNumber < _receivedInput?.TickNumber)
+            //Don't send input to the server if you are the server.
+            if (isClient && hasAuthority)
             {
                 return;
             }
-
-            _remainingServerPredications = MAX_PREDICTIONS;
-            _receivedInput = input;
+            
+            _receivedInputs.Add(input);
+            if (_receivedInputs.Count > MAX_RECEIVED_INPUTS)
+            {
+                _receivedInputs.RemoveAt(0);
+            }
         }
 
         [Server]
         private void ServerProcessReceivedInputs()
         {
-            if (_receivedInput == null || _remainingServerPredications <= 0)
+            //Don't process received inputs on the local server object.
+            if (isClient && hasAuthority)
             {
                 return;
             }
-
-            var isNewInput = _remainingServerPredications == MAX_PREDICTIONS;
-            ProcessInputs(_receivedInput.Value);
-            _remainingServerPredications--;
-
-            if (isNewInput)
+            
+            sbyte timingStepChange = 0;
+            
+            //If the client hasn't sent an input then we need to accelerate its simulation.
+            if (_receivedInputs.Count == 0)
             {
+                timingStepChange = -1;
+            }
+            //If the client has sent too many inputs then we need to slow down its simulation.
+            else if (_receivedInputs.Count > 1)
+            {
+                timingStepChange = 1;
+            }
+
+            if (_receivedInputs.Count > 0)
+            {
+                var receivedInput = _receivedInputs[0];
+                _receivedInputs.RemoveAt(0);
+                
+                ProcessInputs(receivedInput);
                 var state = new MovementServerState()
                 {
-                    TickNumber = _receivedInput.Value.TickNumber,
+                    TickNumber = receivedInput.TickNumber,
                     Position = _body.position,
                     Rotation = _body.rotation,
                     AngularVelocity = _body.angularVelocity,
-                    Velocity = _body.velocity
+                    Velocity = _body.velocity,
+                    TimingStepChange = timingStepChange
                 };
+                
                 TargetSendState(connectionToClient, state);
+            }
+            else if(timingStepChange != 0)
+            {
+                TargetSendTimeStepChange(connectionToClient, timingStepChange);
             }
         }
 
@@ -108,6 +131,12 @@ namespace ServerAuthoritative.Movements
 
             _receivedState = state;
         }
+
+        [TargetRpc]
+        private void TargetSendTimeStepChange(NetworkConnection connection, sbyte stepChange)
+        {
+            TickManager.UpdateTimingStep(stepChange);
+        }
         
         [Client]
         private void ClientProcessInput()
@@ -121,11 +150,11 @@ namespace ServerAuthoritative.Movements
             };
             
             _clientInputs.Add(latestInput);
-
             if (!isServer)
             {
-                ProcessInputs(latestInput);    
+                ProcessInputs(latestInput);
             }
+            
             CmdSendInputs(latestInput);
         }
 
@@ -138,6 +167,9 @@ namespace ServerAuthoritative.Movements
             }
 
             var currentState = _receivedState.Value;
+            _receivedState = null;
+            
+            TickManager.UpdateTimingStep(currentState.TimingStepChange);
             var index = _clientInputs.FindIndex(x => x.TickNumber == currentState.TickNumber);
             if (index >= 0)
             {

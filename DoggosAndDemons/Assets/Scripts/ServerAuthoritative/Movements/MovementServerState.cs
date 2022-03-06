@@ -11,5 +11,6 @@ namespace ServerAuthoritative.Movements
 
         public Vector2 Velocity;
         public float AngularVelocity;
+        public sbyte TimingStepChange;
     }
 }
