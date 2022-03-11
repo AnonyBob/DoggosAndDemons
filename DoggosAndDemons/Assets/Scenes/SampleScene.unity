@@ -133,8 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 174933084}
   - component: {fileID: 174933083}
-  - component: {fileID: 174933082}
   - component: {fileID: 174933085}
+  - component: {fileID: 174933082}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -151,21 +151,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 174933081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7424c1070fad4ba2a7a96b02fbeb4bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 872fa23ef6e77334ca452ce16f6cd091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   port: 38866
-  NoDelay: 1
-  SendTimeout: 5000
-  ReceiveTimeout: 30000
-  serverMaxMessageSize: 16384
-  serverMaxReceivesPerTick: 10000
-  serverSendQueueLimitPerConnection: 10000
-  serverReceiveQueueLimitPerConnection: 10000
-  clientMaxMessageSize: 16384
-  clientMaxReceivesPerTick: 1000
-  clientSendQueueLimit: 10000
-  clientReceiveQueueLimit: 10000
+  LogType: 1
+  DebugDisplay: 0
+  serverBindsAll: 1
+  serverBindAddress: 
+  serverMaxPeerCapacity: 64
+  serverMaxNativeWaitTime: 1
+  serverStatusUpdateInterval: 0
+  clientMaxNativeWaitTime: 3
+  clientStatusUpdateInterval: 0
+  Channels: 0100000002000000
+  ClientDataBufferSize: 1000
+  ClientConnEventBufferSize: 10
+  ServerDataBufferSize: 5000
+  ServerConnEventBufferSize: 100
+  PacketBufferCapacity: 4096
+  MaxAllowedPacketSize: 33554432
 --- !u!114 &174933083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +195,7 @@ MonoBehaviour:
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 4188822745666213665, guid: 81c57bf0ff7d5c54a84be0a560d6cfd6, type: 3}
   autoCreatePlayer: 1
-  playerSpawnMethod: 0
+  playerSpawnMethod: 1
   spawnPrefabs: []
 --- !u!4 &174933084
 Transform:
@@ -1667,15 +1672,15 @@ GameObject:
   m_Component:
   - component: {fileID: 692100529}
   - component: {fileID: 692100528}
-  - component: {fileID: 692100530}
   - component: {fileID: 692100531}
+  - component: {fileID: 692100530}
   m_Layer: 0
   m_Name: DogFollow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &692100528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1698,7 +1703,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 10
+    OrthographicSize: 3.5
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -3841,8 +3846,8 @@ GameObject:
   - component: {fileID: 1861022230}
   - component: {fileID: 1861022229}
   - component: {fileID: 1861022228}
-  - component: {fileID: 1861022227}
   - component: {fileID: 1861022231}
+  - component: {fileID: 1861022227}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -3862,7 +3867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 60
+  m_AssetsPPU: 16
   m_RefResolutionX: 320
   m_RefResolutionY: 180
   m_UpscaleRT: 0
@@ -3905,7 +3910,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 3.5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -3950,10 +3955,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShowDebugText: 0
   m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
+  m_IgnoreTimeScale: 1
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
+  m_UpdateMethod: 1
+  m_BlendUpdateMethod: 0
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2

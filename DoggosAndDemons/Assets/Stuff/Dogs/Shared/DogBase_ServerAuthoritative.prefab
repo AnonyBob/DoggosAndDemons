@@ -4875,9 +4875,9 @@ GameObject:
   - component: {fileID: 8971419456172199310}
   - component: {fileID: 494299118665401912}
   - component: {fileID: 6946685518862392343}
+  - component: {fileID: -1249116581627508154}
   - component: {fileID: 2192612788086068993}
   - component: {fileID: 4625620536643921067}
-  - component: {fileID: 6644225129899598119}
   m_Layer: 0
   m_Name: DogBase_ServerAuthoritative
   m_TagString: Untagged
@@ -4931,6 +4931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  _followTarget: {fileID: 4188822746959590310}
 --- !u!114 &6946685518862392343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4945,7 +4946,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  _moveRate: 30
+  _normalMaxSpeed: 3
+  _normalAcceleration: 100
+  _sprintingMaxSpeed: 12
+  _sprintingAcceleration: 100
+  _stoppingDrag: 10
+  _movingDrag: 0
+--- !u!114 &-1249116581627508154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4188822745666213665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d14f277691442bbbce66c188239a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  _smoothTarget: {fileID: 4188822746959590310}
+  _smoothRate: 20
 --- !u!50 &2192612788086068993
 Rigidbody2D:
   serializedVersion: 4
@@ -4959,8 +4981,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2.5
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -4983,36 +5005,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.43
---- !u!114 &6644225129899598119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4188822745666213665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c6e8001e79980341af98dc404133ebd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  _useLocalSpace: 1
-  _intervalType: 0
-  _synchronizeInterval: 0.1
-  _smoothingLoop: 1
-  _interpolationFallbehind: 0.06
-  _extrapolationSpan: 0
-  _teleportThreshold: 0
-  _clientAuthoritative: 0
-  _synchronizeToOwner: 0
-  _compressSmall: 1
-  _synchronizePosition: 0
-  _snapPosition: 0
-  _synchronizeRotation: 0
-  _snapRotation: 0
-  _synchronizeScale: 1
-  _snapScale: 0
 --- !u!1 &4188822746959590313
 GameObject:
   m_ObjectHideFlags: 0
@@ -5234,7 +5226,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0

@@ -7,6 +7,6 @@
         public float Vertical;
         public float Horizontal;
 
-        public byte Action;
+        public byte Actions;
     }
 }

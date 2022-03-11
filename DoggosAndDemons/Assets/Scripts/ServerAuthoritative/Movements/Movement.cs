@@ -8,18 +8,43 @@ namespace ServerAuthoritative.Movements
 {
     public class Movement : NetworkBehaviour
     {
+        public class CapturedInput
+        {
+            public bool SprintHeld = false;
+            public bool BarkPressed = false;
+        }
+        
+        [SerializeField, Header("Normal")]
+        private float _normalMaxSpeed = 2f;
+
         [SerializeField]
-        private float _moveRate;
+        private float _normalAcceleration = 20;
+        
+        [SerializeField, Header("Sprint")]
+        private float _sprintingMaxSpeed = 2.5f;
+
+        [SerializeField]
+        private float _sprintingAcceleration = 30;
+
+        [SerializeField, Header("Drag")]
+        private float _stoppingDrag = 2;
+
+        [SerializeField]
+        private float _movingDrag = 0;
         
         private Rigidbody2D _body;
         private DoggosAndDemons _inputHandler;
 
         private readonly List<MovementClientInput> _clientInputs = new List<MovementClientInput>();
+        
         private readonly List<MovementClientInput> _receivedInputs = new List<MovementClientInput>();
+        private uint _lastInputTickReceived = 0;
         
         private MovementServerState? _receivedState;
+        private CapturedInput _capturedInput = new CapturedInput();
         
         private const int MAX_RECEIVED_INPUTS = 10;
+        private const int NUMBER_INPUTS_TO_SEND = 3;
 
         private void Awake()
         {
@@ -31,11 +56,25 @@ namespace ServerAuthoritative.Movements
         {
             _inputHandler = new DoggosAndDemons();
             _inputHandler.Player.Enable();
+
+            if (!hasAuthority)
+            {
+                _body.drag = _stoppingDrag;
+            }
         }
 
         private void OnDestroy()
         {
             TickManager.OnUpdate -= TickManager_PerformUpdate;
+        }
+
+        private void Update()
+        {
+            if (hasAuthority)
+            {
+                _capturedInput.BarkPressed = _inputHandler.Player.Bark.triggered;
+                _capturedInput.SprintHeld = _inputHandler.Player.Sprint.ReadValue<float>() > 0;
+            }
         }
 
         private void TickManager_PerformUpdate()
@@ -54,21 +93,58 @@ namespace ServerAuthoritative.Movements
 
         private void ProcessInputs(MovementClientInput input)
         {
-            var movement = new Vector2(input.Horizontal * _moveRate, input.Vertical * _moveRate);
-            _body.AddForce(movement, ForceMode2D.Force);
+            var direction = new Vector2(input.Horizontal, input.Vertical).normalized;
+            if (direction.magnitude == 0)
+            {
+                _body.drag = _stoppingDrag;
+                return;
+            }
+            
+            _body.drag = _movingDrag;
+            var maxSpeed = _normalMaxSpeed;
+            var acceleration = _normalAcceleration;
+            if ((ActionCodes)input.Actions == ActionCodes.Sprint)
+            {
+                maxSpeed = _sprintingMaxSpeed;
+                acceleration = _sprintingAcceleration;
+            }
+
+            _body.AddForce(direction * acceleration, ForceMode2D.Force);
+
+            var velocityMagnitude = _body.velocity.magnitude;
+            if (velocityMagnitude > maxSpeed)
+            {
+                var diff = maxSpeed - velocityMagnitude;
+                _body.AddForce(_body.velocity.normalized * (diff / Time.fixedDeltaTime), ForceMode2D.Force);
+            }
         }
 
-        [Command]
-        private void CmdSendInputs(MovementClientInput input)
+        [Command(channel = 1)]
+        private void CmdSendInputs(MovementClientInput[] inputs)
         {
+            if (inputs == null || inputs.Length == 0)
+                return;
+            
             //Don't send input to the server if you are the server.
             if (isClient && hasAuthority)
             {
                 return;
             }
             
-            _receivedInputs.Add(input);
-            if (_receivedInputs.Count > MAX_RECEIVED_INPUTS)
+            for (var i = 0; i < inputs.Length; ++i)
+            {
+                if (inputs[i].TickNumber > _lastInputTickReceived)
+                {
+                    _receivedInputs.Add(inputs[i]);
+                }
+            }
+
+            if (_receivedInputs.Count > 0)
+            {
+                _lastInputTickReceived = _receivedInputs[_receivedInputs.Count - 1].TickNumber;    
+            }
+            
+            while (_receivedInputs.Count > MAX_RECEIVED_INPUTS)
             {
                 _receivedInputs.RemoveAt(0);
             }
@@ -120,7 +196,7 @@ namespace ServerAuthoritative.Movements
             }
         }
 
-        [TargetRpc]
+        [TargetRpc(channel = 1)]
         private void TargetSendState(NetworkConnection connection, MovementServerState state)
         {
             //Don't process old states.
@@ -132,7 +208,7 @@ namespace ServerAuthoritative.Movements
             _receivedState = state;
         }
 
-        [TargetRpc]
+        [TargetRpc(channel = 1)]
         private void TargetSendTimeStepChange(NetworkConnection connection, sbyte stepChange)
         {
             TickManager.UpdateTimingStep(stepChange);
@@ -142,20 +218,40 @@ namespace ServerAuthoritative.Movements
         private void ClientProcessInput()
         {
             var movement = _inputHandler.Player.Move.ReadValue<Vector2>();
+            var actions = ActionCodes.None;
+
+            if (_capturedInput.BarkPressed)
+            {
+                actions |= ActionCodes.Bark;
+                _capturedInput.BarkPressed = false;
+            }
+
+            if (_capturedInput.SprintHeld)
+            {
+                actions |= ActionCodes.Sprint;
+            }
+            
             var latestInput = new MovementClientInput()
             {
                 Horizontal = movement.x,
                 Vertical = movement.y,
                 TickNumber = TickManager.TickNumber,
+                Actions = (byte)actions
             };
             
             _clientInputs.Add(latestInput);
-            if (!isServer)
+            ProcessInputs(latestInput);
+
+            var amountToSend = Mathf.Min(_clientInputs.Count, 1 + MAX_RECEIVED_INPUTS);
+            var inputsToSend = new MovementClientInput[amountToSend];
+
+            for (var i = 0; i < amountToSend; ++i)
             {
-                ProcessInputs(latestInput);
+                //Send the latest inputs only.
+                inputsToSend[amountToSend - 1 - i] = _clientInputs[_clientInputs.Count - 1 - i];
             }
-            
-            CmdSendInputs(latestInput);
+
+            CmdSendInputs(inputsToSend);
         }
 
         [Client]
@@ -185,7 +281,7 @@ namespace ServerAuthoritative.Movements
             foreach (var input in _clientInputs)
             {
                 ProcessInputs(input);
-                TickManager.Physics.Simulate(TickManager.TickRate);
+                TickManager.Physics.Simulate(Time.fixedDeltaTime);
             }
         }
         
