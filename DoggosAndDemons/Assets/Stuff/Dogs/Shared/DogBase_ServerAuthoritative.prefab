@@ -4878,6 +4878,7 @@ GameObject:
   - component: {fileID: -1249116581627508154}
   - component: {fileID: 2192612788086068993}
   - component: {fileID: 4625620536643921067}
+  - component: {fileID: 8343269532864252853}
   m_Layer: 0
   m_Name: DogBase_ServerAuthoritative
   m_TagString: Untagged
@@ -5005,6 +5006,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.43
+--- !u!114 &8343269532864252853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4188822745666213665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ad8c7a138e4471af56d0bf79ad5a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  _predicationRatio: 0.9
+  _body: {fileID: 2192612788086068993}
 --- !u!1 &4188822746959590313
 GameObject:
   m_ObjectHideFlags: 0

@@ -236,6 +236,7 @@ namespace ServerAuthoritative.Movements
                 Horizontal = movement.x,
                 Vertical = movement.y,
                 TickNumber = TickManager.TickNumber,
+                TickRate = TickManager.TickRate,
                 Actions = (byte)actions
             };
             
@@ -272,6 +273,8 @@ namespace ServerAuthoritative.Movements
                 _clientInputs.RemoveRange(0, index);
             }
 
+            SpectatorRollbackManager.StartRollback();
+            
             _body.position = currentState.Position;
             _body.rotation = currentState.Rotation;
             _body.velocity = currentState.Velocity;
@@ -281,23 +284,10 @@ namespace ServerAuthoritative.Movements
             foreach (var input in _clientInputs)
             {
                 ProcessInputs(input);
-                TickManager.Physics.Simulate(Time.fixedDeltaTime);
+                TickManager.Simulate(input.TickRate, true);
             }
-        }
-        
-        [Client]
-        private void CancelVelocity(bool useForces)
-        {
-            if (useForces)
-            {
-                _body.AddForce(-_body.velocity, ForceMode2D.Impulse);
-                _body.AddTorque(-_body.angularVelocity, ForceMode2D.Impulse);
-            }
-            else
-            {
-                _body.velocity = Vector2.zero;
-                _body.angularVelocity = 0;
-            }
+            
+            SpectatorRollbackManager.EndRollback();
         }
     }
 }

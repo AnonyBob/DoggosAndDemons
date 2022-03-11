@@ -114,21 +114,9 @@ namespace ServerAuthoritative.Movements
         private Vector3 _prePosition;
         private Quaternion _preRotation;
 
-        public override void OnStartAuthority()
-        {
-            base.OnStartAuthority();
-            ChangeSubscribeUpdates(true);
-        }
-
-        public override void OnStopAuthority()
-        {
-            base.OnStopAuthority();
-            ChangeSubscribeUpdates(false);
-        }
-
         private void OnEnable()
-        {
-            if(hasAuthority)
+        { 
+            if(!NetworkServer.active)
                 ChangeSubscribeUpdates(true);
         }
 
@@ -139,8 +127,7 @@ namespace ServerAuthoritative.Movements
 
         private void Update()
         {
-            if(hasAuthority)
-                ApplySmooth();
+            ApplySmooth();
         }
 
         private void ApplySmooth()

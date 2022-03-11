@@ -11,23 +11,35 @@ namespace ServerAuthorative
         public static float TickRate => Instance._tickRate;
 
         public static PhysicsScene2D Physics => Instance._physics;
-        
+
         public static event Action OnPreUpdate
         {
             add => Instance._onPreUpdate += value;
             remove => Instance._onPreUpdate -= value;
         }
-        
+
         public static event Action OnUpdate
         {
             add => Instance._onUpdate += value;
             remove => Instance._onUpdate -= value;
         }
-        
+
         public static event Action OnPostUpdate
         {
             add => Instance._onPostUpdate += value;
             remove => Instance._onPostUpdate -= value;
+        }
+
+        public static event Action<float, bool> OnPresimulate
+        {
+            add => Instance._onPreSimulate += value;
+            remove => Instance._onPreSimulate -= value;
+        }
+
+        public static event Action<float, bool> OnPostSimulate
+        {
+            add => Instance._onPostSimulate += value;
+            remove => Instance._onPostSimulate -= value;
         }
 
         public static void UpdateTimingStep(sbyte timingStepChange)
@@ -35,12 +47,22 @@ namespace ServerAuthorative
             Instance._tickRate = Mathf.Clamp(Instance._tickRate + (timingStepChange * TICK_STEP_CHANGE),
                 TICK_SPEED_RANGE[0], TICK_SPEED_RANGE[1]);
         }
-        
+
+        public static void Simulate(float deltaTime, bool isReplay)
+        {
+            Instance._onPreSimulate?.Invoke(deltaTime, isReplay);
+            Physics.Simulate(deltaTime);
+            
+            Instance._onPostSimulate?.Invoke(deltaTime, isReplay);
+        }
+
         private uint _tickNumber;
         
         private event Action _onPreUpdate;
         private event Action _onUpdate;
         private event Action _onPostUpdate;
+        private event Action<float, bool> _onPreSimulate;
+        private event Action<float, bool> _onPostSimulate;
 
         private float _timeBetweenTicks = 0;
         
@@ -71,7 +93,7 @@ namespace ServerAuthorative
                 _onPreUpdate?.Invoke();
                 _onUpdate?.Invoke();
                 
-                _physics.Simulate(_tickRate);
+                Simulate(_tickRate, false);
                 _onPostUpdate?.Invoke();
             }
 

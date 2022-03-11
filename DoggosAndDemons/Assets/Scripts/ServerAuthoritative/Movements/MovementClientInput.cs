@@ -1,4 +1,6 @@
-﻿namespace ServerAuthoritative.Movements
+﻿using System;
+
+namespace ServerAuthoritative.Movements
 {
     public struct MovementClientInput
     {
@@ -8,5 +10,8 @@
         public float Horizontal;
 
         public byte Actions;
+
+        [NonSerialized]
+        public float TickRate;
     }
 }
