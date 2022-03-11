@@ -10,8 +10,5 @@ namespace ServerAuthoritative.Movements
         public float Horizontal;
 
         public byte Actions;
-
-        [NonSerialized]
-        public float TickRate;
     }
 }

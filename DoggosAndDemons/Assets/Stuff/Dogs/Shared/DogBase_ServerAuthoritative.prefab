@@ -5020,7 +5020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  _predicationRatio: 0.9
+  _predicationRatio: 0.75
   _body: {fileID: 2192612788086068993}
 --- !u!1 &4188822746959590313
 GameObject:

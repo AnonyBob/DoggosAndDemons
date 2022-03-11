@@ -236,7 +236,6 @@ namespace ServerAuthoritative.Movements
                 Horizontal = movement.x,
                 Vertical = movement.y,
                 TickNumber = TickManager.TickNumber,
-                TickRate = TickManager.TickRate,
                 Actions = (byte)actions
             };
             
@@ -284,7 +283,7 @@ namespace ServerAuthoritative.Movements
             foreach (var input in _clientInputs)
             {
                 ProcessInputs(input);
-                TickManager.Simulate(input.TickRate, true);
+                TickManager.Simulate(Time.fixedDeltaTime, true);
             }
             
             SpectatorRollbackManager.EndRollback();

@@ -93,7 +93,7 @@ namespace ServerAuthorative
                 _onPreUpdate?.Invoke();
                 _onUpdate?.Invoke();
                 
-                Simulate(_tickRate, false);
+                Simulate(Time.fixedDeltaTime, false);
                 _onPostUpdate?.Invoke();
             }
 
