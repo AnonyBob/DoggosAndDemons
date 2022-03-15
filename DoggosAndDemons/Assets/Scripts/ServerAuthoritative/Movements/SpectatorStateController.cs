@@ -50,13 +50,11 @@ namespace ServerAuthoritative.Movements
             if (subscribe)
             {
                 SpectatorRollbackManager.OnRollbackStart += OnRollbackStart;
-                SpectatorRollbackManager.OnRollbackEnd += OnRollbackEnd;
                 TickManager.OnPostSimulate += OnPostSimulate;
             }
             else
             {
                 SpectatorRollbackManager.OnRollbackStart -= OnRollbackStart;
-                SpectatorRollbackManager.OnRollbackEnd -= OnRollbackEnd;
                 TickManager.OnPostSimulate -= OnPostSimulate;
             }
         }
@@ -180,11 +178,6 @@ namespace ServerAuthoritative.Movements
                     _body.angularVelocity = Mathf.Lerp(_body.angularVelocity, _lastAngularVelocity, _predicationRatio);
                 }
             }
-        }
-        
-        private void OnRollbackEnd()
-        {
-            
         }
 
         [Server]
